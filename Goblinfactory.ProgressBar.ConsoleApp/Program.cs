@@ -1,18 +1,17 @@
-# progress-bar
-- Single file include C# console progress bar 
-- (minimum requirements .net framework 3.5)
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
-## Status
-
-First draft; some issues around tasks and setting y-position after the final task, easy fix, just want to get this draft in first.
-Acceptance tests are in the `Goblinfactory.ProgressBar.Tests` project.
-
-## Notes
-
-Going to seperate the MockConsole and ProgressBar into seperate projects and get into Nuget. 
-
-##sample usage - synchronouse use
-```csharp
+namespace Goblinfactory.ProgressBar.ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
             Console.WriteLine("Simplest usage");
             var pb = new ProgressBar(50);
             pb.Refresh(0, "connecting to server to download 50 files sychronously.");
@@ -20,22 +19,9 @@ Going to seperate the MockConsole and ProgressBar into seperate projects and get
             pb.Refresh(5, "downloading file 5");
             Console.ReadLine();
             pb.Refresh(50, "finished.");
-```
-produces the following output
-```
-Item 0     of 50   . (0  %)
-connecting to server to download 50 files sychronously.
-```
-(press enter)
 
-```
-Item 50    of 50   . (100%) ############################################################################
-finished.
-```
+            return;
 
-##example of showing status update for parallel tasks
-
-```csharp
 
             // demo; take the first 10 directories that have files from c:\windows, and then pretends to process (list) them.
             // processing of each directory happens on a different thread, to simulate multiple background tasks, 
@@ -75,5 +61,5 @@ finished.
             }
         } 
 
-
-```
+    }
+}
