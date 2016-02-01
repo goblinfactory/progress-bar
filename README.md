@@ -19,7 +19,7 @@ Going to seperate the MockConsole and ProgressBar into seperate projects and get
             pb.Refresh(0, "connecting to server to download 50 files sychronously.");
             Console.ReadLine();
             
-            pb.Refresh(5, "downloading file 5");
+            pb.Refresh(25, "downloading file number 25");
             Console.ReadLine();
             pb.Refresh(50, "finished.");
 ```
@@ -29,6 +29,13 @@ Item 0     of 50   . (0  %)
 connecting to server to download 50 files sychronously.
 ```
 (press enter)
+
+```
+Item 25    of 50   . (50%) ######################################
+downloading file number 25
+```
+
+(press enter again)
 
 ```
 Item 50    of 50   . (100%) ############################################################################
