@@ -12,29 +12,29 @@ namespace Goblinfactory.ProgressBar.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Simplest usage");
-            var pb = new ProgressBar(50);
-            pb.Refresh(0, "connecting to server to download 50 files sychronously.");
-            Console.ReadLine();
-            pb.Refresh(5, "downloading file 5");
-            Console.ReadLine();
-            pb.Refresh(50, "finished.");
+            //Console.WriteLine("Simplest usage");
+            //var pb = new ProgressBar(50);
+            //pb.Refresh(0, "connecting to server to download 50 files sychronously.");
+            //Console.ReadLine();
+            //pb.Refresh(5, "downloading file 5");
+            //Console.ReadLine();
+            //pb.Refresh(50, "finished.");
 
-            return;
+            //return;
 
 
             // demo; take the first 10 directories that have files from c:\windows, and then pretends to process (list) them.
             // processing of each directory happens on a different thread, to simulate multiple background tasks, 
             // e.g. file downloading.
             // ==============================================================================================================
-            var dirs = Directory.GetDirectories(@"c:\windows").Where(d=> Directory.GetFiles(d).Count()>0).Take(10);
+            var dirs = Directory.GetDirectories(@"c:\windows").Where(d=> Directory.GetFiles(d).Count()>0).Take(7);
 
             var tasks = new List<Task>();
             var bars = new List<ProgressBar>();
             foreach (var d in dirs)
             {
                 var dir = new DirectoryInfo(d);
-                var files = dir.GetFiles().Take(100).Select(f=>f.FullName).ToArray();
+                var files = dir.GetFiles().Take(50).Select(f=>f.FullName).ToArray();
                 if (files.Count()==0) continue;
                 var bar = new ProgressBar(files.Count());
                 bars.Add(bar);

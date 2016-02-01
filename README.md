@@ -1,6 +1,7 @@
 # progress-bar
-- Single file include C# console progress bar 
-- (minimum requirements .net framework 3.5)
+- Single file include C# console progress bar, with support for single or multithreaded progress updates. 
+
+![](goblinfactory.progressbar.gif)
 
 ## Status
 
@@ -11,12 +12,13 @@ Acceptance tests are in the `Goblinfactory.ProgressBar.Tests` project.
 
 Going to seperate the MockConsole and ProgressBar into seperate projects and get into Nuget. 
 
-##sample usage - synchronouse use
+##Usage
 ```csharp
-            Console.WriteLine("Simplest usage");
+            
             var pb = new ProgressBar(50);
             pb.Refresh(0, "connecting to server to download 50 files sychronously.");
             Console.ReadLine();
+            
             pb.Refresh(5, "downloading file 5");
             Console.ReadLine();
             pb.Refresh(50, "finished.");
@@ -34,6 +36,8 @@ finished.
 ```
 
 ##example of showing status update for parallel tasks
+
+This example creates 10 seperate console progress bars, each being updated on a seperate thread.
 
 ```csharp
 
