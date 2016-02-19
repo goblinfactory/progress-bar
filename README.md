@@ -17,6 +17,10 @@ Going to seperate the MockConsole and ProgressBar into seperate projects and get
 ##Usage
 ```csharp
             
+    using Goblinfactory.ProgressBar;
+           
+           . . .
+
             var pb = new ProgressBar(50);
             pb.Refresh(0, "connecting to server to download 50 files sychronously.");
             Console.ReadLine();
