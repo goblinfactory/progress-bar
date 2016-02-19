@@ -1,5 +1,5 @@
 # progress-bar
-- Single file include C# console progress bar, with support for single or multithreaded progress updates. 
+- C# console progress bar, with support for single or multithreaded progress updates. 
 
 ![](goblinfactory.progressbar.gif)
 
