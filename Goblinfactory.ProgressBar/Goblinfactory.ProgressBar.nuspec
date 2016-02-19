@@ -2,17 +2,17 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>0.0.1.0</version>
     <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <authors>Alan Hemmings</authors>
+    <owners>Goblinfactory Ltd</owners>
     <licenseUrl>https://raw.githubusercontent.com/goblinfactory/progress-bar/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/goblinfactory/progress-bar/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/goblinfactory/progress-bar/master/progress.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <description>C# console progress bar, with support for single or multithreaded progress updates. </description>
+    <releaseNotes>First draft.</releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>Tag1 Tag2</tags>
+    <tags>console progress console-progress progressbar progress-bar</tags>
   </metadata>
 </package>

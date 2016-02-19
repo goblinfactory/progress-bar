@@ -2,5 +2,5 @@
 $dir= '.\Goblinfactory.ProgressBar\'
 Push-Location
 cd $dir
-nuget spec -f
+nuget pack .\Goblinfactory.ProgressBar.csproj -Prop Configuration=Release
 Pop-Location
