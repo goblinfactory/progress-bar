@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goblinfactory.ProgressBar.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPackage", "TestPackage\TestPackage.csproj", "{6BB369A1-0457-4F45-86B7-D1E4AF90EB64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goblinfactory.MockConsole", "Goblinfactory.MockConsole\Goblinfactory.MockConsole.csproj", "{C68CE83B-CC99-430F-AF3D-E41B363BEE83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goblinfactory.Konsole", "Goblinfactory.Konsole\Goblinfactory.Konsole.csproj", "{90808A57-0462-4D92-94F8-DA95B7931895}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,14 @@ Global
 		{6BB369A1-0457-4F45-86B7-D1E4AF90EB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BB369A1-0457-4F45-86B7-D1E4AF90EB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BB369A1-0457-4F45-86B7-D1E4AF90EB64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68CE83B-CC99-430F-AF3D-E41B363BEE83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68CE83B-CC99-430F-AF3D-E41B363BEE83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68CE83B-CC99-430F-AF3D-E41B363BEE83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68CE83B-CC99-430F-AF3D-E41B363BEE83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90808A57-0462-4D92-94F8-DA95B7931895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90808A57-0462-4D92-94F8-DA95B7931895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90808A57-0462-4D92-94F8-DA95B7931895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90808A57-0462-4D92-94F8-DA95B7931895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

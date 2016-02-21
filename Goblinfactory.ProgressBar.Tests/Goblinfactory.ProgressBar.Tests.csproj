@@ -66,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Goblinfactory.Konsole\Goblinfactory.Konsole.csproj">
+      <Project>{90808A57-0462-4D92-94F8-DA95B7931895}</Project>
+      <Name>Goblinfactory.Konsole</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Goblinfactory.ProgressBar\Goblinfactory.ProgressBar.csproj">
       <Project>{D6E4DD88-ADDA-4D65-B255-0F3447323213}</Project>
       <Name>Goblinfactory.ProgressBar</Name>

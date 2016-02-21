@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Goblinfactory.Konsole;
+using Goblinfactory.Konsole;
 
 namespace Goblinfactory.ProgressBar
 {
@@ -75,17 +77,5 @@ namespace Goblinfactory.ProgressBar
         }
     }
 
-    // -----------------------------------------------------------------------------------
-    // support classes in order to keep this simple and down to a single include file
-    // -----------------------------------------------------------------------------------
-
-    public interface IConsole
-    {
-        void WriteLine(string format, params object[] args);
-        void Write(string format, params object[] args);
-        int WindowWidth();
-        int CursorTop { get; set; }
-        ConsoleColor ForegroundColor { get; set; }
-    }
 }
 
