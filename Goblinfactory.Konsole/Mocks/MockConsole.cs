@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Goblinfactory.Konsole;
 
-namespace Goblinfactory.Konsole
+namespace Goblinfactory.Konsole.Mocks
 {
     /// <summary>
     /// mock console writer that emulates setting the line (y) position,

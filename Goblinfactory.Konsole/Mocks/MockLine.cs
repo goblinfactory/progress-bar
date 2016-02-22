@@ -1,4 +1,4 @@
-namespace Goblinfactory.MockConsoleLib
+namespace Goblinfactory.Konsole.Mocks
 {
     public class MockLine
     {

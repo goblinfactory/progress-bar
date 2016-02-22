@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D6E4DD88-ADDA-4D65-B255-0F3447323213}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{E634519F-A91A-478E-BAF4-E268E135B01C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Goblinfactory.ProgressBarLib</RootNamespace>
-    <AssemblyName>Goblinfactory.ProgressBar</AssemblyName>
+    <RootNamespace>Goblinfactory.Konsole.Sample</RootNamespace>
+    <AssemblyName>Goblinfactory.Konsole.Sample</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +25,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,16 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProgressBar.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Goblinfactory.ProgressBar.nuspec" />
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Goblinfactory.ConsoleLib\Goblinfactory.ConsoleLib.csproj">
+    <ProjectReference Include="..\Goblinfactory.Konsole\Goblinfactory.Konsole.csproj">
       <Project>{90808A57-0462-4D92-94F8-DA95B7931895}</Project>
-      <Name>Goblinfactory.ConsoleLib</Name>
+      <Name>Goblinfactory.Konsole</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

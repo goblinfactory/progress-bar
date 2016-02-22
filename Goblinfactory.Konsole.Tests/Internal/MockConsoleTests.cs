@@ -1,5 +1,6 @@
 ﻿using System;
 using Goblinfactory.Konsole;
+using Goblinfactory.Konsole.Mocks;
 using NUnit.Framework;
 
 

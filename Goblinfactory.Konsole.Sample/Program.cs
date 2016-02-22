@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Goblinfactory.ProgressBar.ConsoleApp
+namespace Goblinfactory.Konsole.Sample
 {
     class Program
     {
@@ -30,13 +29,13 @@ namespace Goblinfactory.ProgressBar.ConsoleApp
             var dirs = Directory.GetDirectories(@"c:\windows").Where(d=> Directory.GetFiles(d).Count()>0).Take(7);
 
             var tasks = new List<Task>();
-            var bars = new List<ProgressBar>();
+            var bars = new List<ProgressBar.ProgressBar>();
             foreach (var d in dirs)
             {
                 var dir = new DirectoryInfo(d);
                 var files = dir.GetFiles().Take(50).Select(f=>f.FullName).ToArray();
                 if (files.Count()==0) continue;
-                var bar = new ProgressBar(files.Count());
+                var bar = new ProgressBar.ProgressBar(files.Count());
                 bars.Add(bar);
                 bar.Refresh(0, d);
                 tasks.Add(new Task(() => ProcessFiles(d, files, bar)));
@@ -51,7 +50,7 @@ namespace Goblinfactory.ProgressBar.ConsoleApp
 
         }
 
-        public static void ProcessFiles(string directory, string[] files, ProgressBar bar)
+        public static void ProcessFiles(string directory, string[] files, ProgressBar.ProgressBar bar)
         {
             var cnt = files.Count();
             foreach (var file in files)

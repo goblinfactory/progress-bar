@@ -3,9 +3,9 @@ using System.Text;
 using ApprovalTests;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
-using Goblinfactory.ProgressBar.Tests.Internal;
 using NUnit.Framework;
 using Goblinfactory.Konsole;
+using Goblinfactory.Konsole.Mocks;
 
 namespace Goblinfactory.ProgressBar.Tests
 {
@@ -20,7 +20,7 @@ namespace Goblinfactory.ProgressBar.Tests
             var testoutput = new StringBuilder();
             var console = new MockConsole(80, false);
             var pb = new ProgressBar(10, console);
-
+            
             for (int i = 1; i < 5; i++)
             {
                 Console.WriteLine(" --- test " + i + "-----");
