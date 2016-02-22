@@ -1,5 +1,5 @@
-# progress-bar
-- C# console progress bar, with support for single or multithreaded progress updates. 
+# (Goblinfactory.Konsole) progress-bar
+- C# console progress bar with support for single or multithreaded progress updates. 
 
 ### `Install-Package Goblinfactory.ProgressBar`
 
