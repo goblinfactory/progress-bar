@@ -1,5 +1,7 @@
 ﻿using System;
+using Goblinfactory.Konsole;
 using NUnit.Framework;
+
 
 namespace Goblinfactory.ProgressBar.Tests.Internal
 {

@@ -5,6 +5,7 @@ using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using Goblinfactory.ProgressBar.Tests.Internal;
 using NUnit.Framework;
+using Goblinfactory.Konsole;
 
 namespace Goblinfactory.ProgressBar.Tests
 {

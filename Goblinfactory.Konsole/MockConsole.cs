@@ -1,27 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Goblinfactory.Konsole;
 
-namespace Goblinfactory.ProgressBar.Tests.Internal
+namespace Goblinfactory.Konsole
 {
-    public class MockLine
-    {
-        public MockLine() : this(false, ""){}
-        public MockLine(string text) : this(false, text) {}
-        public MockLine(bool overwrite, string text)
-        {
-            Overwrite = overwrite;
-            Text = text;
-        }
-        public bool Overwrite { get; set; }
-        public string Text { get; set; }
-    }
     /// <summary>
     /// mock console writer that emulates setting the line (y) position,
     /// which is sufficient detail for us to acceptance test this progressbar
     /// </summary>
-    internal class MockConsole : IConsole
+    public class MockConsole : IConsole
     {
         private readonly int _windowWidth;
         private readonly bool _echo;

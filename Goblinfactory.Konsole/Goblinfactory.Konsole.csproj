@@ -7,8 +7,8 @@
     <ProjectGuid>{90808A57-0462-4D92-94F8-DA95B7931895}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Goblinfactory.Console</RootNamespace>
-    <AssemblyName>Goblinfactory.Console</AssemblyName>
+    <RootNamespace>Goblinfactory.Konsole</RootNamespace>
+    <AssemblyName>Goblinfactory.Konsole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="ConsoleWriter.cs" />
     <Compile Include="IConsole.cs" />
+    <Compile Include="MockConsole.cs" />
+    <Compile Include="MockLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
