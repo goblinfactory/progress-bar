@@ -14,6 +14,10 @@ Acceptance tests are in the `Goblinfactory.ProgressBar.Tests` project.
 
 Going to seperate the MockConsole and ProgressBar into seperate projects and get into Nuget. 
 
+ 
+
+  - Update 24.02.16 : Done first draft that supports color and CursorLeft and CursorTop now in place. (See ` GridMockConsole.cs ` and ` GridMockConsoleTests.cs `)
+
 ##Usage
 ```csharp
             
