@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using ApprovalTests;
+using ApprovalTests.Maintenance;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
@@ -9,10 +10,14 @@ using Goblinfactory.Konsole.Mocks;
 
 namespace Goblinfactory.ProgressBar.Tests
 {
-    [UseApprovalSubdirectory("Approvals")]
     [UseReporter(typeof(DiffReporter))]
     public class ProgressBarAcceptanceTests
     {
+        [Test]
+        public void EnsureNoAbandonedFiles()
+        {
+            ApprovalMaintenance.VerifyNoAbandonedFiles();
+        }
 
         [Test]
         public void refresh_should_show_progress_title_and_progress_bar()

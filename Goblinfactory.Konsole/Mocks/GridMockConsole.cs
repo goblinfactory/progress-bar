@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Goblinfactory.Konsole.Mocks
 {
+
     public class GridMockConsole : IConsole
     {
         private readonly int _width;

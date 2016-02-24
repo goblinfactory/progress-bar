@@ -10,12 +10,6 @@ namespace Goblinfactory.ProgressBar.Tests.Internal
     public class MockConsoleTests
     {
         [Test]
-        public void EnsureNoAbandonedFiles()
-        {
-            ApprovalMaintenance.VerifyNoAbandonedFiles();
-        }
-
-        [Test]
         public void cursor_X_andY_tests()
         {
             
