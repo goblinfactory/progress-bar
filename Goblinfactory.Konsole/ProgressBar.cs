@@ -24,7 +24,7 @@ namespace Goblinfactory.ProgressBar
         public ProgressBar(int max, char character, string format, IConsole console)
         {
             _console = console;
-            _y = _console.CursorTop;
+            _y = _console.Y;
             _c = _console.ForegroundColor;
             _current = 0;
             _max = max;
@@ -45,14 +45,13 @@ namespace Goblinfactory.ProgressBar
             lock (_locker)
             {
                 // save current position
-                //int y = _console.CursorTop;
                 _current = current;
                 try
                 {
                     float perc = (float) current/(float) _max;
                     var bar = new String(_character, (int) ((float) (_console.WindowWidth() - 30)*perc));
                     var line = string.Format(_format, current, _max, (int) (perc*100));
-                    _console.CursorTop = _y;
+                    _console.Y = _y;
                     _console.ForegroundColor = _c;
                     _console.Write(line);
                     _console.ForegroundColor = ConsoleColor.Green;
@@ -64,8 +63,6 @@ namespace Goblinfactory.ProgressBar
                 finally
                 {
                     _console.ForegroundColor = _c;
-                    // return cursor to user's previous line
-                    //_console.CursorTop = y;
                 }
             }
         }

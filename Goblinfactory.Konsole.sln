@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goblinfactory.Konsole.Sampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goblinfactory.Konsole.Tests", "Goblinfactory.Konsole.Tests\Goblinfactory.Konsole.Tests.csproj", "{E01C01FC-011F-4D5C-A56D-D9692EB3DAD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goblinfactory.Konsole.Spike", "Goblinfactory.Konsole.Spike\Goblinfactory.Konsole.Spike.csproj", "{4424C96B-5CC6-4014-8FE6-6C8A1C8611F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{E01C01FC-011F-4D5C-A56D-D9692EB3DAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E01C01FC-011F-4D5C-A56D-D9692EB3DAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E01C01FC-011F-4D5C-A56D-D9692EB3DAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4424C96B-5CC6-4014-8FE6-6C8A1C8611F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4424C96B-5CC6-4014-8FE6-6C8A1C8611F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4424C96B-5CC6-4014-8FE6-6C8A1C8611F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4424C96B-5CC6-4014-8FE6-6C8A1C8611F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

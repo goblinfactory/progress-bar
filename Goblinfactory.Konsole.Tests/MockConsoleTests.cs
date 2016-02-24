@@ -1,4 +1,5 @@
 ﻿using System;
+using ApprovalTests.Maintenance;
 using Goblinfactory.Konsole;
 using Goblinfactory.Konsole.Mocks;
 using NUnit.Framework;
@@ -8,6 +9,23 @@ namespace Goblinfactory.ProgressBar.Tests.Internal
 {
     public class MockConsoleTests
     {
+        [Test]
+        public void EnsureNoAbandonedFiles()
+        {
+            ApprovalMaintenance.VerifyNoAbandonedFiles();
+        }
+
+        [Test]
+        public void cursor_X_andY_tests()
+        {
+            
+            var console = new MockConsole(20);
+            //var console = new MockConsole(20,20);
+            console.Write("X");
+            //console.X
+
+        }
+
         [Test]
         public void write_and_write_line_simple_usages()
         {
@@ -32,17 +50,17 @@ namespace Goblinfactory.ProgressBar.Tests.Internal
         public void cursor_top_should_show_current_line()
         {
             var console = new MockConsole(80);
-            Assert.AreEqual(0, console.CursorTop);
+            Assert.AreEqual(0, console.Y);
             console.WriteLine("line1");
-            Assert.AreEqual(1, console.CursorTop);
+            Assert.AreEqual(1, console.Y);
             console.Write("This ");
-            Assert.AreEqual(1, console.CursorTop);
+            Assert.AreEqual(1, console.Y);
             console.Write("is ");
-            Assert.AreEqual(1, console.CursorTop);
+            Assert.AreEqual(1, console.Y);
             console.WriteLine("a test line.");
-            Assert.AreEqual(2, console.CursorTop);
+            Assert.AreEqual(2, console.Y);
             console.WriteLine("line 3");
-            Assert.AreEqual(3, console.CursorTop);
+            Assert.AreEqual(3, console.Y);
         }
 
         [Test]
@@ -54,7 +72,7 @@ namespace Goblinfactory.ProgressBar.Tests.Internal
             console.WriteLine("line 0");
             console.WriteLine("line 1");
             console.WriteLine("line 2");
-            console.CursorTop = 1;
+            console.Y = 1;
             console.WriteLine("new line 1");
             var expected = new[]
             {
