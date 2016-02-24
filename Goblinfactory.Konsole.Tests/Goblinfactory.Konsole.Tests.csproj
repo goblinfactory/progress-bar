@@ -58,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GridMockConsoleTests.cs" />
-    <Compile Include="MockConsoleTests.cs" />
     <Compile Include="ProgressBarAcceptanceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +69,11 @@
       <Project>{90808A57-0462-4D92-94F8-DA95B7931895}</Project>
       <Name>Goblinfactory.Konsole</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GridMockConsoleTests.overflow_text_should_wrap_onto_next_line.approved.txt" />
+    <Content Include="ProgressBarAcceptanceTests.refresh_should_show_progress_title_and_progress_bar.approved.txt" />
+    <Content Include="ProgressBarAcceptanceTests.should_still_update_progress_even_when_writing_lines_after_progress_bar.approved.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

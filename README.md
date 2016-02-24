@@ -14,11 +14,9 @@ Acceptance tests are in the `Goblinfactory.ProgressBar.Tests` project.
 
 Going to seperate the MockConsole and ProgressBar into seperate projects and get into Nuget. 
 
- 
-
   - Update 24.02.16 : Done first draft that supports color and CursorLeft and CursorTop now in place. (See ` GridMockConsole.cs ` and ` GridMockConsoleTests.cs `)
 
-##Usage
+##ProgressBar Usage
 ```csharp
             
     using Goblinfactory.ProgressBar;
@@ -54,7 +52,7 @@ finished.
 
 ##example of showing status update for parallel tasks
 
-This example creates 10 seperate console progress bars, each being updated on a seperate thread.
+This example creates 10 seperate console progress bars, each being updated on a seperate thread. (This code generates the output visible in the animated gif.)
 
 ```csharp
 

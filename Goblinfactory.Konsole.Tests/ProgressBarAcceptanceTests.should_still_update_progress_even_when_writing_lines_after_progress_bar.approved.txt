@@ -1,4 +1,4 @@
-﻿line 1
-Item 10    of 10   . (100%) ##########
-dogs                                  
-line 4
+﻿line 1                                  
+Item 10    of 10   . (100%) ##########  
+dogs                                    
+line 4                                  
