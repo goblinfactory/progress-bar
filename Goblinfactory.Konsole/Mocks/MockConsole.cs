@@ -29,9 +29,9 @@ namespace Goblinfactory.Konsole.Mocks
         }
         private int _lastLineWrittenTo;
 
-        public MockConsole(int width, int height, bool echo = true) : this(width, height, ConsoleColor.White, ConsoleColor.Black, echo) { }
+        public MockConsole(int width, int height, bool echo = false) : this(width, height, ConsoleColor.White, ConsoleColor.Black, echo) { }
 
-        public MockConsole(int width, int height, ConsoleColor color, ConsoleColor background, bool echo = true)
+        public MockConsole(int width, int height, ConsoleColor color, ConsoleColor background, bool echo = false)
         {
             _width = width;
             _height = height;
