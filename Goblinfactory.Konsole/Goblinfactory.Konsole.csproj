@@ -45,7 +45,6 @@
     <Compile Include="Mocks\Cell.cs" />
     <Compile Include="Mocks\MockConsole.cs" />
     <Compile Include="Mocks\Line.cs" />
-    <Compile Include="Mocks\MockLine.cs" />
     <Compile Include="Mocks\XY.cs" />
     <Compile Include="ProgressBar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
