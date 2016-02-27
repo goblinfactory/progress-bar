@@ -1,9 +1,9 @@
 # (Goblinfactory.Konsole) progress-bar
-- C# console progress bar with support for single or multithreaded progress updates. 
+- C# console progress bar with support for single or multithreaded progress updates.
 
 ### `Install-Package Goblinfactory.ProgressBar`
 
-![](goblinfactory.progressbar.gif)
+![](progressbar.gif)
 
 ## Status
 
@@ -12,21 +12,21 @@ Acceptance tests are in the `Goblinfactory.ProgressBar.Tests` project.
 
 ## Notes
 
-Going to seperate the MockConsole and ProgressBar into seperate projects and get into Nuget. 
+Going to seperate the MockConsole and ProgressBar into seperate projects and get into Nuget.
 
   - Update 24.02.16 : Done first draft that supports color and CursorLeft and CursorTop now in place. (See ` GridMockConsole.cs ` and ` GridMockConsoleTests.cs `)
 
 ##ProgressBar Usage
 ```csharp
-            
+
     using Goblinfactory.ProgressBar;
-           
+
            . . .
 
             var pb = new ProgressBar(50);
             pb.Refresh(0, "connecting to server to download 50 files sychronously.");
             Console.ReadLine();
-            
+
             pb.Refresh(25, "downloading file number 25");
             Console.ReadLine();
             pb.Refresh(50, "finished.");
@@ -57,7 +57,7 @@ This example creates 10 seperate console progress bars, each being updated on a 
 ```csharp
 
             // demo; take the first 10 directories that have files from c:\windows, and then pretends to process (list) them.
-            // processing of each directory happens on a different thread, to simulate multiple background tasks, 
+            // processing of each directory happens on a different thread, to simulate multiple background tasks,
             // e.g. file downloading.
             // ==============================================================================================================
             var dirs = Directory.GetDirectories(@"c:\windows").Where(d=> Directory.GetFiles(d).Count()>0).Take(10);
@@ -92,7 +92,7 @@ This example creates 10 seperate console progress bars, each being updated on a 
                 bar.Next(new FileInfo(file).Name);
                 Thread.Sleep(150);
             }
-        } 
+        }
 
 
 ```

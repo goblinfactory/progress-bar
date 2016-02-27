@@ -1,6 +1,6 @@
 "Hello world, building first nuget package"
-$dir= '.\Goblinfactory.Konsole\'
+$dir= '.\Konsole\'
 Push-Location
 cd $dir
-nuget pack .\Goblinfactory.ProgressBar.csproj -Prop Configuration=Release
+nuget pack .\Konsole.csproj -Prop Configuration=Release
 Pop-Location
