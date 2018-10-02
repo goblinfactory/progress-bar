@@ -3,7 +3,7 @@
 
 ### `Install-Package Goblinfactory.ProgressBar`
 
-![](progressbar.gif)
+![InstallProgressBar](progressbar.gif)
 
 ## Status
 
