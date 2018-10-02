@@ -1,5 +1,5 @@
 # (Goblinfactory.Konsole) progress-bar
-- C# console progress bar with support for single or multithreaded progress updates.
+- C# (dotnet standard) console progress bar with support for single or multithreaded progress updates.
 
 ### `Install-Package Goblinfactory.ProgressBar`
 
@@ -7,14 +7,10 @@
 
 ## Status
 
-First draft; some issues around tasks and setting y-position after the final task, easy fix, just want to get this draft in first.
-Acceptance tests are in the `Goblinfactory.ProgressBar.Tests` project.
+Draft port to netstandard for discussion. Still need to port the tests. Includes a mini port of some of Konsole interfaces.
 
 ## Notes
 
-Going to seperate the MockConsole and ProgressBar into seperate projects and get into Nuget.
-
-  - Update 24.02.16 : Done first draft that supports color and CursorLeft and CursorTop now in place. (See ` GridMockConsole.cs ` and ` GridMockConsoleTests.cs `)
 
 ##ProgressBar Usage
 ```csharp
@@ -96,3 +92,9 @@ This example creates 10 seperate console progress bars, each being updated on a 
 
 
 ```
+
+## Still Todo
+
+- finish documentation for ProgressBarSlim and ProgressBar.
+- Include tests
+- manual testing
