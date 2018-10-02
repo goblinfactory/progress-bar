@@ -58,7 +58,17 @@ namespace Konsole
 
         public ConsoleState State
         {
-            get {  return new ConsoleState(Console.ForegroundColor,Console.BackgroundColor, Console.CursorTop, Console.CursorLeft, Console.CursorVisible );}
+            get
+            {
+                if(PlatformCheck.IsWindows)
+                {
+                    return new ConsoleState(Console.ForegroundColor, Console.BackgroundColor, Console.CursorTop, Console.CursorLeft, Console.CursorVisible);
+                }
+                else
+                {
+                    return new ConsoleState(Console.ForegroundColor, Console.BackgroundColor, Console.CursorTop, Console.CursorLeft, true);
+                }
+            }
             set
             {
                 Console.ForegroundColor = value.ForegroundColor;
