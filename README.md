@@ -9,6 +9,8 @@
 
 Draft port to netstandard for discussion. Still need to port the tests. Includes a mini port of some of Konsole interfaces.
 
+**CURRENTLY DOES NOT WORK CORRECTLY ON MAC! Busy investigating workaround!**
+
 ## Notes
 
 
