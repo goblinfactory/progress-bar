@@ -4,6 +4,17 @@ namespace Konsole
 {
     public class Writer : IConsole
     {
+        private bool _isWindows;
+
+        public Writer()
+        {
+            _isWindows = PlatformCheck.IsWindows;
+        }
+
+        public Writer(bool isWindows)
+        {
+            _isWindows = isWindows;
+        }
 
         public void WriteLine(string format, params object[] args)
         {
@@ -54,7 +65,10 @@ namespace Konsole
                 Console.BackgroundColor = value.BackgroundColor;
                 Console.CursorTop = value.Top;
                 Console.CursorLeft = value.Left;
-                Console.CursorVisible = value.CursorVisible;
+                if(_isWindows)
+                {
+                    Console.CursorVisible = value.CursorVisible;
+                }
             }
         }
 
@@ -146,8 +160,15 @@ namespace Konsole
 
         public bool CursorVisible
         {
-            get { return Console.CursorVisible; }
-            set { Console.CursorVisible = value; }
+            get
+            {
+                return _isWindows ? Console.CursorVisible : true;
+            }
+            set
+            {
+                if (!_isWindows) return;
+                Console.CursorVisible = value;
+            }
         }
 
         public void PrintAt(int x, int y, string format, params object[] args)
@@ -166,11 +187,6 @@ namespace Konsole
             if (x >= Console.WindowWidth || x>=Console.BufferWidth) return;
             Console.SetCursorPosition(x, y);
             Console.Write(c);
-        }
-
-        public void ScrollUp()
-        {
-            // do nothing?? mmm.
         }
 
         public void Clear()
