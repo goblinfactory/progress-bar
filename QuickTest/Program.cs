@@ -54,7 +54,7 @@ namespace QuickTest
             foreach (var file in files)
             {
                 bar.Next(file);
-                Thread.Sleep(50);
+                Thread.Sleep(150);
             }
         }
     }
