@@ -5,12 +5,6 @@
 
 ![InstallProgressBar](progressbar.gif)
 
-## Status
-
-Draft port to netstandard for discussion. Still need to port the tests. Includes a mini port of some of Konsole interfaces.
-
-**CURRENTLY DOES NOT WORK CORRECTLY ON MAC! Busy investigating workaround!**
-
 ## Notes
 
 
@@ -99,4 +93,6 @@ This example creates 10 seperate console progress bars, each being updated on a 
 
 - finish documentation for ProgressBarSlim and ProgressBar.
 - Include tests
-- manual testing
+- more manual testing
+
+![multi-threaded test on mac terminal](tested-on-mac-terminal.png)
