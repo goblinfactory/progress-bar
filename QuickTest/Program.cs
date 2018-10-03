@@ -15,10 +15,16 @@ namespace QuickTest
 
         static void Main(string[] args)
         {
-            int numDirs = 15;
-            Console.OutputEncoding = Encoding.UTF8;
-
             var con = new Writer();
+            // line below runs the action and resets any global console state
+            // eg foreground and background colors after the action runs
+            // wrapped in a try finally
+            con.Run(con, ()=> Run(con), true);
+        }
+
+        static void Run(IConsole con)
+        {
+            int numDirs = 15;            
             con.ForegroundColor = ConsoleColor.White;
             var r = new Random();
             var dirs = Files.Take(numDirs).Select(f => f.Split(new[] { '.' })[0]);

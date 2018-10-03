@@ -137,9 +137,10 @@ namespace Konsole
         }
 
         /// <summary>
-        /// Run command and preserve the state, i.e. restore the console state after running command.
+        /// Run command and preserve the state, i.e. restore the console state after running command to exactly what it was beforehand.
+        /// set dontResetCursor to true, if your code leaves the cursor where you want it.
         /// </summary>
-        public void DoCommand(IConsole console, Action action)
+        public void Run(IConsole console, Action action, bool leaveCursorAtLastPosition = false)
         {
             if (console == null)
             {
@@ -153,7 +154,13 @@ namespace Konsole
             }
             finally
             {
+                (int x, int y) = (console.CursorLeft, console.CursorTop);
                 console.State = state;
+                if(leaveCursorAtLastPosition)
+                {
+                    console.CursorLeft = x;
+                    console.CursorTop = y;
+                }
             }
         }
 
@@ -211,7 +218,7 @@ namespace Konsole
 
         public void PrintAtColor(ConsoleColor foreground, int x, int y, string text, ConsoleColor? background = null)
         {
-            DoCommand(this, () =>
+            Run(this, () =>
             {
                 State = new ConsoleState(foreground, background ?? BackgroundColor, y, x, CursorVisible);
                 Write(text);
