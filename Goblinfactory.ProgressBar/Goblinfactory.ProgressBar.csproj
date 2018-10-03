@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/goblinfactory/ProgressBar/</RepositoryUrl>
     <PackageReleaseNotes>C# (dotnet standard) console progress bar with support for single or multithreaded progress updates</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>progressbar progress console netstandard konsole goblinfactory</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
