@@ -95,4 +95,8 @@ This example creates 10 seperate console progress bars, each being updated on a 
 - Include tests
 - more manual testing
 
+## Mac Screenshots
+
+Multi threaded test on mac ternimal.
+
 ![multi-threaded test on mac terminal](tested-on-mac-terminal.png)
