@@ -108,7 +108,7 @@ This example creates 10 seperate console progress bars, each being updated on a 
 
 Multi threaded test using `ProgressBarSlim` on mac ternimal.
 
-![multi-threaded test on mac terminal](progressbar-in-mac-terminal.png)
+![multi-threaded test on mac terminal](progressbar-on-mac.gif)
 
 ## Useful links for future work
 
