@@ -3,11 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>C# (dotnet standard) console progress bar with support for single or multithreaded progress updates.</Description>
-    <Version>0.1.0</Version>
+    <Version>0.3.0</Version>
     <Copyright>Copyright Goblinfactory Ltd, 2018, all rights reserved.</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/goblinfactory/ProgressBar/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/goblinfactory/ProgressBar/</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/goblinfactory/ProgressBar/master/progress.png</PackageIconUrl>
+    <Title>Goblinfactory.ProgressBar</Title>
+    <PackageIconUrl>https://raw.githubusercontent.com/goblinfactory/progress-bar/master/progress.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/goblinfactory/ProgressBar/</RepositoryUrl>
     <PackageReleaseNotes>C# (dotnet standard) console progress bar with support for single or multithreaded progress updates</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

@@ -10,12 +10,12 @@ namespace Konsole
         public string Line1 => _bar.Line1; 
         public string Line2 => _bar.Line2;
 
-        public ProgressBar(int max)                                                 : this(max, null,'#', PbStyle.SingleLine, new Writer()) { }
-        public ProgressBar(int max, int textWidth)                                  : this(max, textWidth, '#', PbStyle.SingleLine, new Writer()) { }
-        public ProgressBar(int max, int textWidth, char character)                  : this(max, textWidth, character, PbStyle.SingleLine, new Writer()) { }
-        public ProgressBar(PbStyle style, int max)                                  : this(max, null, '#', style, new Writer()) { }
-        public ProgressBar(PbStyle style, int max, int textWidth)                   : this(max, textWidth, '#', style, new Writer()) { }
-        public ProgressBar(PbStyle style, int max, int textWidth, char character)   : this(max, textWidth, character, style, new Writer()) { }
+        public ProgressBar(int max)                                                 : this(max, null,'#', PbStyle.SingleLine, new ThreadsafeWriter()) { }
+        public ProgressBar(int max, int textWidth)                                  : this(max, textWidth, '#', PbStyle.SingleLine, new ThreadsafeWriter()) { }
+        public ProgressBar(int max, int textWidth, char character)                  : this(max, textWidth, character, PbStyle.SingleLine, new ThreadsafeWriter()) { }
+        public ProgressBar(PbStyle style, int max)                                  : this(max, null, '#', style, new ThreadsafeWriter()) { }
+        public ProgressBar(PbStyle style, int max, int textWidth)                   : this(max, textWidth, '#', style, new ThreadsafeWriter()) { }
+        public ProgressBar(PbStyle style, int max, int textWidth, char character)   : this(max, textWidth, character, style, new ThreadsafeWriter()) { }
 
         internal ProgressBar(IConsole console, int max)                                                 : this(max, null,'#', PbStyle.SingleLine, console) { }
         internal ProgressBar(IConsole console, int max, int textWidth)                                  : this(max, textWidth, '#', PbStyle.SingleLine, console) { }

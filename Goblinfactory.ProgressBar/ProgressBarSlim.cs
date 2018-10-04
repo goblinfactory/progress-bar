@@ -42,9 +42,9 @@ namespace Konsole
             }
         }
 
-        public ProgressBarSlim(int max)                                  : this(max, '#', new Writer()) { }
-        public ProgressBarSlim(int max, int textWidth)                   : this(max, textWidth,'#', new Writer()) { }
-        public ProgressBarSlim(int max, int textWidth, char character)   : this(max, textWidth, character, new Writer()) { }
+        public ProgressBarSlim(int max)                                  : this(max, '#', new ThreadsafeWriter()) { }
+        public ProgressBarSlim(int max, int textWidth)                   : this(max, textWidth,'#', new ThreadsafeWriter()) { }
+        public ProgressBarSlim(int max, int textWidth, char character)   : this(max, textWidth, character, new ThreadsafeWriter()) { }
         public ProgressBarSlim(int max, IConsole console)                : this(max, null, '#', console) { }
         public ProgressBarSlim(int max, int textWidth, IConsole console) : this(max, textWidth, '#', console) { }
 
@@ -67,7 +67,7 @@ namespace Konsole
         {
             return width.HasValue
                 ? width.Value
-                : console.WindowWidth/4;
+                : console.Width/4;
         }
 
         public int Max
@@ -102,7 +102,7 @@ namespace Konsole
                 try
                 {
                     float perc = (float) _current/(float) _max;
-                    int barWidth = _console.WindowWidth - (TextWidth+8);
+                    int barWidth = _console.Width - (TextWidth+8);
                     var bar = _current > 0
                         ? new string(_character, (int) ((float) (barWidth)*perc)).PadRight(barWidth)
                         : new string(' ', barWidth);

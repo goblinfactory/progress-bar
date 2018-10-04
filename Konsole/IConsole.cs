@@ -15,8 +15,8 @@ namespace Konsole
         /// </summary>
         int AbsoluteY { get; } 
 
-        int WindowWidth { get; }
-        int WindowHeight { get; }
+        int Width { get; }
+        int Height { get; }
         int CursorTop { get; set; }
         int CursorLeft { get; set; }
         Colors Colors { get; set; }

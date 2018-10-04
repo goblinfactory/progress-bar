@@ -81,9 +81,9 @@ namespace Konsole
                 try
                 {
                     float perc = Max > 0 ? (float) current/(float) _max : 0;
-                    var bar = new string(_character, (int) ((float) (_console.WindowWidth - 30)*perc));
+                    var bar = new string(_character, (int) ((float) (_console.Width - 30)*perc));
                     var line = string.Format(FORMAT, current, _max, (int) (perc*100));
-                    var barWhitespace = _console.WindowWidth - (bar.Length + line.Length  + 1);
+                    var barWhitespace = _console.Width - (bar.Length + line.Length  + 1);
                     _console.CursorTop = _y;
                     _console.CursorLeft = 0;
                     _console.ForegroundColor = _c;
@@ -92,7 +92,7 @@ namespace Konsole
                     _console.Write(bar);
                     _console.WriteLine(barWhitespace > 0 ? new String(' ', barWhitespace) : "");
                     _console.ForegroundColor = _c;
-                    _line2 = itemText.PadRight(_console.WindowWidth - 2);
+                    _line2 = itemText.PadRight(_console.Width - 2);
                     _console.WriteLine(_line2);
                     _line1 = $"{line} {bar}";
                 }

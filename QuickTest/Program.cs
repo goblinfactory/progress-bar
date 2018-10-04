@@ -13,17 +13,40 @@ namespace QuickTest
     {
         private static string[] Files = new[] { "12520437.cpx", "12520850.cpx", "@AudioToastIcon.png", "@EnrollmentToastIcon.png", "@VpnToastIcon.png", "@WirelessDisplayToast.png", "aadauthhelper.dll", "aadtb.dll", "aadWamExtension.dll", "AboveLockAppHost.dll", "accessibilitycpl.dll", "accountaccessor.dll", "AccountsRt.dll", "AcGenral.dll", "AcLayers.dll", "acledit.dll", "aclui.dll", "acppage.dll", "AcSpecfc.dll", "ActionCenter.dll", "ActionCenterCPL.dll", "ActivationClient.dll", "ActivationManager.dll", "activeds.dll", "activeds.tlb", "ActiveSyncProvider.dll", "actxprxy.dll", "AcWinRT.dll", "acwow64.dll", "AcXtrnal.dll", "adalsql.dll", "AdaptiveCards.dll", "AddressParser.dll", "AdmTmpl.dll", "adprovider.dll", "adrclient.dll", "adsldp.dll", "adsldpc.dll", "adsmsext.dll", "adsnt.dll" };
 
+        static bool stopClock = false;
+        // demo showing mixing and matching writing using con = new Writer(); with calling Console directly e.g. Console.WriteLine("");
+        // it is only safe to call Console directly when all background threads have finished accessing Console using a ThreadSafeWriter.
+        // so you can mix and match while background threads are not running,
+        // and when threads start, you MUST only write to the console via a ThreadSafeWriter
         static void Main(string[] args)
         {
-            var con = new Writer();
-            // line below runs the action and resets any global console state
-            // eg foreground and background colors after the action runs
-            // wrapped in a try finally
-            con.Run(con, ()=> Run(con), true);
+            Console.Clear();
+            var clock = Task.Run(()=> RunClock());
+            ProcessFakeFiles();
+            stopClock = true;
+            clock.Wait();
+            Console.ResetColor();
         }
 
-        static void Run(IConsole con)
+        static void RunClock()
         {
+            var con = new ThreadsafeWriter();
+            var x = con.Width - 10;
+            // not the best way to signal to thread to stop, will do for demo
+            while(!stopClock)
+            {
+                con.PrintAt(x, 0, DateTime.Now.ToString("HH:MM:ss"));
+                Thread.Sleep(1000);
+            }
+        }
+
+        static void ProcessFakeFiles()
+        {
+            var con = new ThreadsafeWriter();
+            // Screen will have been cleared so we are at the top
+            // write one empty line so that the first progress bar does not
+            // overlap with the demo clock.
+            con.WriteLine("");
             int numDirs = 15;            
             con.ForegroundColor = ConsoleColor.White;
             var r = new Random();
@@ -31,6 +54,7 @@ namespace QuickTest
 
             var tasks = new List<Task>();
             var bars = new List<ProgressBar>();
+            int cnt = dirs.Count();
             foreach (var d in dirs)
             {
                 var dir = d;
@@ -40,13 +64,13 @@ namespace QuickTest
                 bar.Refresh(0, d);
                 tasks.Add(new Task(() => ProcessFakeFiles(d, files, bar)));
             }
-
-            con.WriteLine("Press enter to start");
-            Console.ReadLine();
+            
+            con.WriteLine("Press any key to start");
+            Console.ReadKey(true);
+            con.WriteLine("processing...       ");
             foreach (var t in tasks) t.Start();
             Task.WaitAll(tasks.ToArray());
-            con.ForegroundColor = ConsoleColor.Yellow;
-            con.WriteLine("finished.");
+            con.WriteLine(ConsoleColor.Yellow, "finished.           ");
         }
 
         public static void ProcessFakeFiles(string directory, string[] files, ProgressBar bar)
@@ -55,22 +79,6 @@ namespace QuickTest
             {
                 bar.Next(file);
                 Thread.Sleep(150);
-            }
-        }
-    }
-
-    public static class QueueExtensions
-    {
-        public static IEnumerable<T> Dequeue<T>(this ConcurrentQueue<T> src, int x)
-        {
-            int cnt = 0;
-            bool more = true;
-            while (more && cnt < x)
-            {
-                T item;
-                more = src.TryDequeue(out item);
-                cnt++;
-                yield return item;
             }
         }
     }

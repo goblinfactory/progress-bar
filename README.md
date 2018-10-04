@@ -1,14 +1,18 @@
 # (Goblinfactory.Konsole) progress-bar
+
 - C# (dotnet standard) console progress bar with support for single or multithreaded progress updates.
 
 ### `Install-Package Goblinfactory.ProgressBar`
 
 ![InstallProgressBar](progressbar.gif)
 
-## Notes
+## OSX Notes and limitations
 
+- Tested on OSX, and currently only works if there is no screen scrolling.
+    - i.e. if you create progressbars and the screen scrolls when creating the progressbar, then the progressbars will not work correctly at present.
 
-##ProgressBar Usage
+## ProgressBar Usage
+
 ```csharp
 
     using Goblinfactory.ProgressBar;
@@ -23,26 +27,29 @@
             Console.ReadLine();
             pb.Refresh(50, "finished.");
 ```
+
 produces the following output
-```
+
+```text
 Item 0     of 50   . (0  %)
 connecting to server to download 50 files sychronously.
 ```
+
 (press enter)
 
-```
+```text
 Item 25    of 50   . (50%) ######################################
 downloading file number 25
 ```
 
 (press enter again)
 
-```
+```text
 Item 50    of 50   . (100%) ############################################################################
 finished.
 ```
 
-##example of showing status update for parallel tasks
+## example of showing status update for parallel tasks
 
 This example creates 10 seperate console progress bars, each being updated on a seperate thread. (This code generates the output visible in the animated gif.)
 
@@ -91,12 +98,18 @@ This example creates 10 seperate console progress bars, each being updated on a 
 
 ## Still Todo
 
+- support screen scrolling.
 - finish documentation for ProgressBarSlim and ProgressBar.
 - Include tests
 - more manual testing
+- Some cleanup work to be done on resetting the cursor position when lots of threads updating progressbars
 
 ## Mac Screenshots
 
 Multi threaded test using `ProgressBarSlim` on mac ternimal.
 
 ![multi-threaded test on mac terminal](progressbar-in-mac-terminal.png)
+
+## Useful links for future work
+
+https://docs.microsoft.com/en-us/windows/console/console-screen-buffers
