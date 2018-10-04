@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace QuickTest
 {
@@ -23,7 +24,6 @@ namespace QuickTest
             Console.Clear();
             var clock = Task.Run(()=> RunClock());
             ProcessFakeFiles();
-            stopClock = true;
             clock.Wait();
             Console.ResetColor();
         }
@@ -37,6 +37,20 @@ namespace QuickTest
             {
                 con.PrintAt(x, 0, DateTime.Now.ToString("HH:MM:ss"));
                 Thread.Sleep(1000);
+            }
+        }
+
+        static void Seconds(int y)
+        {
+            var sw = new Stopwatch();
+            sw.Start();
+            var con = new ThreadsafeWriter();
+            // not the best way to signal to thread to stop, will do for demo
+            while(!stopClock)
+            {
+                decimal seconds = sw.ElapsedMilliseconds / 1000M;
+                con.PrintAtColor(ConsoleColor.Red, 17, y + 1, $"{seconds:0.00}");
+                Thread.Sleep(100);
             }
         }
 
@@ -64,12 +78,15 @@ namespace QuickTest
                 bar.Refresh(0, d);
                 tasks.Add(new Task(() => ProcessFakeFiles(d, files, bar)));
             }
-            
+            int y = bars.Last().Y + 1;
             con.WriteLine("Press any key to start");
             Console.ReadKey(true);
             con.WriteLine("processing...       ");
+            var seconds = Task.Run(()=> Seconds(y));
             foreach (var t in tasks) t.Start();
             Task.WaitAll(tasks.ToArray());
+            stopClock = true;
+            seconds.Wait();
             con.WriteLine(ConsoleColor.Yellow, "finished.           ");
         }
 
