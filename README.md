@@ -108,6 +108,8 @@ This example creates 10 seperate console progress bars, each being updated on a 
 
 Multi threaded test using `ProgressBarSlim` on mac ternimal.
 
+Gif below is the output from the [QuickTest sample project](QuickTest/Program.cs).
+
 ![multi-threaded test on mac terminal](progress-bar-on-mac.gif)
 
 ## Useful links for future work
