@@ -103,6 +103,7 @@ This example creates 10 seperate console progress bars, each being updated on a 
 - Include tests
 - more manual testing
 - Some cleanup work to be done on resetting the cursor position when lots of threads updating progressbars
+- I think we need to move all the lock objects to a shared static ConsoleLocker class, as the current locking can bleed in some very high (lots of threads using both ProgressBar, ProgressBarSlim as well as ThreadSafeWriter.)
 
 ## Mac Screenshots
 
