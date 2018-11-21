@@ -117,4 +117,4 @@ Screenshot below is the output from the [QuickTest sample project] (QuickTest/Pr
 
 ## Useful links for future work
 
-https://docs.microsoft.com/en-us/windows/console/console-screen-buffers
+https://docs.microsoft.com/en-us/windows/console/console-screen-buffersdoub
