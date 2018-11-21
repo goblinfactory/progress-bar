@@ -111,7 +111,7 @@ Multi threaded test using `ProgressBarSlim` on mac ternimal.
 
 Gif below is the output from the [QuickTest sample project](QuickTest/Program.cs).
 
-![multi-threaded test in mac terminal](progress-bar-in-mac-terminal.png)
+![multi-threaded test in mac terminal](progressbar-in-mac-terminal.png)
 
 ## Useful links for future work
 
