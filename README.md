@@ -4,6 +4,8 @@
 
 ### `Install-Package Goblinfactory.ProgressBar`
 
+Screenshot of progressbar demo using the double line progressbar, `ProgressBarTwoLine`.
+
 ![InstallProgressBar](progressbar.gif)
 
 ## OSX Notes and limitations
@@ -107,9 +109,9 @@ This example creates 10 seperate console progress bars, each being updated on a 
 
 ## Mac Screenshots
 
-Multi threaded test using `ProgressBarSlim` on mac ternimal.
+Multi threaded test using the default 1 line slim `ProgressBar` on mac ternimal.
 
-Gif below is the output from the [QuickTest sample project](QuickTest/Program.cs).
+Screenshot below is the output from the [QuickTest sample project] (QuickTest/Program.cs).
 
 ![multi-threaded test in mac terminal](progressbar-in-mac-terminal.png)
 
