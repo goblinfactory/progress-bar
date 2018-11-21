@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Goblinfactory.ProgressBar</id>
-    <version>0.1.0</version>
+    <version>0.4.0</version>
     <title>Goblinfactory.ProgressBar</title>
     <authors>Alan Hemmings</authors>
     <owners>Goblinfactory Ltd</owners>
@@ -11,9 +11,9 @@
     <projectUrl>https://github.com/goblinfactory/ProgressBar/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/goblinfactory/ProgressBar/master/progress.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>C# (dotnet standard) console progress bar with support for single or multithreaded progress updates.</description>
+    <description>multiplatform C# (dotnet standard) console progress bar with support for single or multithreaded progress updates.</description>
     <summary>
-      C# (dotnet standard) console progress bar with support for single or multithreaded progress updates
+      C# multiplatform (dotnet standard) console progress bar with support for single or multithreaded progress updates.
     </summary>
     <copyright>Copyright Goblinfactory Ltd, 2018, all rights reserved.</copyright>
     <tags>konsole progress progressbar netstandard</tags>

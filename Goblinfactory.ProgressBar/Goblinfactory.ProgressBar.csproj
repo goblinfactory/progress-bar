@@ -15,8 +15,4 @@
     <PackageTags>progressbar progress console netstandard konsole goblinfactory</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Konsole\Konsole.csproj" />
-  </ItemGroup>
-
 </Project>

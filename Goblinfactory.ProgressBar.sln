@@ -7,10 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Goblinfactory.ProgressBar",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2E84016-4F74-4BEF-9B9C-E41C463A2F60}"
 	ProjectSection(SolutionItems) = preProject
+		Goblinfactory.ProgressBar\Goblinfactory.ProgressBar.nuspec = Goblinfactory.ProgressBar\Goblinfactory.ProgressBar.nuspec
 		README.md = README.md
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Konsole", "Konsole\Konsole.csproj", "{ABB2561A-24A8-4A90-8161-AA6887EE9567}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickTest", "QuickTest\QuickTest.csproj", "{3E6246E2-9E1A-471F-AA24-F4670641BDAE}"
 EndProject
@@ -24,10 +23,6 @@ Global
 		{B40D0410-792E-404A-85FD-46AA5741A998}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B40D0410-792E-404A-85FD-46AA5741A998}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B40D0410-792E-404A-85FD-46AA5741A998}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ABB2561A-24A8-4A90-8161-AA6887EE9567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABB2561A-24A8-4A90-8161-AA6887EE9567}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABB2561A-24A8-4A90-8161-AA6887EE9567}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABB2561A-24A8-4A90-8161-AA6887EE9567}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E6246E2-9E1A-471F-AA24-F4670641BDAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3E6246E2-9E1A-471F-AA24-F4670641BDAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E6246E2-9E1A-471F-AA24-F4670641BDAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
