@@ -4,9 +4,10 @@ namespace Konsole
     public enum PbStyle {  SingleLine, DoubleLine }
     public class ProgressBar : IProgressBar
     {
-        private IProgressBar _bar;
+        private readonly IProgressBar _bar;
 
         public int Y => _bar.Y;
+        public int Current => _bar.Current;
         public string Line1 => _bar.Line1; 
         public string Line2 => _bar.Line2;
 
