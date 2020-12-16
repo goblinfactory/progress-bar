@@ -18,6 +18,8 @@ namespace Konsole
             get { return _y; }
         }
 
+        public int Current => _current;
+
         public string Line1
         {
             get { return _line1; }
